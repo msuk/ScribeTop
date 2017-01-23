@@ -1,3 +1,7 @@
+$(window).on('load', function(){
+    $('#modalPopUp').modal('show');
+});
+
 // Set up editors
 var htmlEditor = CodeMirror.fromTextArea(document.getElementById("htmlPanel"), {
     lineNumbers: true,

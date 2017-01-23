@@ -63,6 +63,10 @@ ul.nav.nav-tabs {
     border: 1px solid #D34F02;
 }
 
+.modal {
+    text-align: center;
+}
+
 .nav-link {
     width: 85px;
     text-align: center;
