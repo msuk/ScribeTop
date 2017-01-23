@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+
+        <!-- jQuery necessities -->
+        <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+        
+        <!-- Code Mirror -->
+        <script src="CodeMirror/lib/codemirror.js"></script>
+        <link rel="stylesheet" href="CodeMirror/lib/codemirror.css">
+        <link rel="stylesheet" href="CodeMirror/theme/solarized.css">
+        <script src="CodeMirror/mode/javascript/javascript.js"></script>
+        <script src="CodeMirror/mode/css/css.js"></script>
+        <script src="CodeMirror/mode/xml/xml.js"></script>
+        
+        <!-- File Saver -->
+        <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/14082/FileSaver.js"></script>
+        
+        <!-- jQuery Terminal -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.terminal/0.11.23/js/jquery.terminal.min.js"></script>
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/jquery.terminal/0.11.23/css/jquery.terminal.min.css" rel="stylesheet"/>
+        
+        
+        <!-- Google Fonts -->
+        <link href="https://fonts.googleapis.com/css?family=Oxygen+Mono|Source+Code+Pro|Comfortaa|Baumans|Expletus+Sans" rel="stylesheet">
+        
+        <!-- Personal stylesheets and CSS -->
+        <title>ScribeTop</title>
+        <link rel="shortcut icon" href="img/ScribeTop.ico"/>
+        <link rel="stylesheet" href="main.css">
+    </head>
+    <body>
+        <nav id="top-toolbar" class="navbar navbar-toggleable-md toolbar navbar-inverse bg-inverse">
+            <img src="img/ScribeTopLogo.png" class="d-inline-block align-top" alt="">
+            <h2 class="navbar-brand">ScribeTop</h2>
+        </nav>
+        
+        <ul class="nav nav-tabs justify-content-end">
+            <li class="nav-item">
+                <span id="htmlTab" class="nav-link active" href="#html">HTML</span>
+            </li>
+            <li class="nav-item">
+                <span id="cssTab" class="nav-link" href="#css">CSS</span>
+            </li>
+            <li class="nav-item">
+                <span id="jsTab" class="nav-link" href="#js">JS</span>
+            </li>
+        </ul>
+        <div id="codePanel" class="row no-gutters tab-content">
+            <div id="html" class="col-md-12 panel tab-pane active">
+                <div class="label"><span>HTML</span></div>
+                <textarea id="htmlPanel"></textarea>
+            </div>
+            <div id="css" class="panel tab-pane">
+                <div class="label"><span>CSS</span></div>
+                <textarea id="cssPanel"></textarea>
+            </div>
+            <div id="js" class="panel tab-pane">
+                <div class="label"><span>JS</span></div>
+                <textarea id="jsPanel"></textarea>
+            </div>
+        </div>
+
+        <div id="output" class="row">
+            <iframe id="outputPanel" class="col-md-12"></iframe>
+            <div id="term_demo"></div>
+        </div>
+        <nav id="bottom-toolbar" class="navbar fixed-bottom toolbar bg-inverse">
+            <div class="btn-group" data-toggle="buttons">
+                <button type="button" id="exportButton" class="btn btn-primary btn-sm">Export</button>
+                <button type="button" id="consoleButton" aria-pressed="false" class="btn btn-primary btn-sm">Console</button>
+                <button type="button" id="outputButton" aria-pressed="true" class="btn btn-primary btn-sm active">Output</button>
+            </div>
+        </nav>
+        
+        <!-- jQuery -->
+        <script src="script.js"></script>
+
+        <!-- jQuery first, then Tether, then Bootstrap JS. -->
+        <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+    </body>
+</html>
