@@ -157,13 +157,26 @@ $(".nav-link").click(function() {
 
 // Saving files
 $("#exportButton").click(function() {
+    $('#modalExport').modal('show');
+});
+
+$("#exportSubmit").click(function() {
     var htmlBlob = new Blob([htmlValue], {type:"text/plain;charset=utf-8"});
     var cssBlob = new Blob([cssValue], {type:"text/plain;charset=utf-8"});
     var jsBlob = new Blob([jsValue], {type:"text/plain;charset=utf-8"});
-    var filename = "sample";
-    saveAs(htmlBlob, filename + ".html");
-    saveAs(cssBlob, filename + ".css");
-    saveAs(jsBlob, filename + ".js");
+    var filename = $("#filename").html();
+    if (filename == "") {
+        filename = "untitled";
+    }
+    if ($("#htmlCheckBox").hasClass("active")) {
+        saveAs(htmlBlob, filename + ".html");
+    }
+    if ($("#cssCheckBox").hasClass("active")) {
+        saveAs(cssBlob, filename + ".css");
+    }
+    if ($("#jsCheckBox").hasClass("active")) {
+        saveAs(jsBlob, filename + ".js");
+    }
 });
 
 // Console

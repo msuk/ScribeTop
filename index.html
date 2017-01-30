@@ -39,7 +39,7 @@
     <body>
         <nav id="top-toolbar" class="navbar navbar-toggleable-md toolbar navbar-inverse bg-inverse">
             <img src="img/ScribeTopLogo.png" class="d-inline-block align-top" alt="">
-            <h2 class="navbar-brand">ScribeTop</h2>
+            <h2 class="navbar-brand" id="filename" contenteditable="true" placeholder="ScribeTop"></h2>
         </nav>
         
         <div id="modalPopUp" class="modal fade">
@@ -92,6 +92,40 @@
         <div id="output" class="row">
             <iframe id="outputPanel" class="col-md-12"></iframe>
             <div id="term_demo"></div>
+        </div>
+        
+        <div id="modalExport" class="modal fade">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Export</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <p>Select file(s) to export.</p>
+                        <div class="btn-group" id="saveButtons" data-toggle="buttons">
+                            <label class="btn btn-primary" id="htmlCheckBox">
+                                <input type="checkbox" autocomplete="off">HTML
+                            </label>
+                            <label class="btn btn-primary" id="cssCheckBox">
+                                <input type="checkbox" autocomplete="off">CSS
+                            </label>
+                            <label class="btn btn-primary" id="jsCheckBox">
+                                <input type="checkbox" autocomplete="off">JS
+                            </label>
+                            <label class="btn btn-primary" id="zipCheckBox">
+                                <input type="checkbox" autocomplete="off">Compressed Folder (.zip)
+                            </label>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" id="exportSubmit">Export</button>
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
         </div>
         <nav id="bottom-toolbar" class="navbar fixed-bottom toolbar bg-inverse">
             <div class="btn-group" data-toggle="buttons">
