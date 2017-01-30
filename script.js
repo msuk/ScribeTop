@@ -166,7 +166,7 @@ $("#exportSubmit").click(function() {
     var jsBlob = new Blob([jsValue], {type:"text/plain;charset=utf-8"});
     var filename = $("#filename").html();
     if (filename == "") {
-        filename = "untitled";
+        filename = "scribetop";
     }
     if ($("#htmlCheckBox").hasClass("active")) {
         saveAs(htmlBlob, filename + ".html");
@@ -176,6 +176,18 @@ $("#exportSubmit").click(function() {
     }
     if ($("#jsCheckBox").hasClass("active")) {
         saveAs(jsBlob, filename + ".js");
+    }
+    if ($("#zipCheckBox").hasClass("active")) {
+        var zip = new JSZip();
+        var htmlFile = filename + ".html";
+        var cssFile = filename + ".css";
+        var jsFile = filename + ".js";
+        zip.file(htmlFile, htmlValue);
+        zip.file(cssFile, cssValue);
+        zip.file(jsFile, jsValue);
+        var content = zip.generateAsync({type:"blob"}).then(function (content) {
+            saveAs(content, filename + ".zip");
+        });
     }
 });
 
